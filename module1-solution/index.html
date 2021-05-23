@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="LunchCheck">
+  <head>
+    <title>Lunch Checker</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/resultSyle.css">
+    
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+<body>
+  <div class="container">
+    <h1>Lunch Checker</h1>
+  
+    <div ng-controller="LunchCheckController">
+      <div class="form-group">
+        <input 
+          type="text"
+          class="form-control"
+          placeholder={{placeholder}}
+          ng-model="list"
+        >
+        </div>
+        <h5>An empty item, i.e., `, ,` as an item towards to the count is not considered.</h5>
+        <div class="form-group">
+          <button class="btn btn-default" ng-click="splitString(); resultStyle()">Check If Too Much</button>
+        </div>
+        <div ng-class="resultStyle()">
+          <h1>{{result}}</h1>
+        </div>
+      </div>
+  </div>
+
+</body>
+</html>
